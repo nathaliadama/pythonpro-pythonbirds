@@ -1,4 +1,4 @@
-import module_matematica
+from matematica import module_matematica
 
 resultado = module_matematica.multiplica(2, 3)
 
