@@ -21,7 +21,6 @@ class Pessoa:
         return f'{cls} - olhos - {cls.olhos}'
 
 
-
 # Testes
 if __name__ == '__main__':
     p = Pessoa()
