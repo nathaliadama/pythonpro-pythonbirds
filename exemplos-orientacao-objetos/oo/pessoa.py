@@ -11,6 +11,16 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 11 + 31
+
+    @classmethod
+    def nomes_atributos_classe(cls):
+        """Usado para acessar dados da própria classe"""
+        return f'{cls} - olhos - {cls.olhos}'
+
+
 
 # Testes
 if __name__ == '__main__':
@@ -105,3 +115,11 @@ if __name__ == '__main__':
 
     # Verificando o dict de p3
     print(p3.__dict__)
+
+    # Executando os métodos estáticos.
+    print(Pessoa.metodo_estatico())  # Diretamente pela classe.
+    print(p1.metodo_estatico())  # Ou pelo objeto.
+
+    # Acessando os métodos de classe
+    print(Pessoa.nomes_atributos_classe())  # Acessando pela classe.
+    print(p1.nomes_atributos_classe())  # Acessando pelo objeto.
