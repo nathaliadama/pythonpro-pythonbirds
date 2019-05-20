@@ -41,7 +41,7 @@ if __name__ == '__main__':
     for filho in p3.filhos:
         print(filho)
 
-    # Atribuição dinâmica de atributos
+    # Criação dinâmica de atributos
     p3.sobrenome = "B. Falcão"
     print(p3.sobrenome)
 
