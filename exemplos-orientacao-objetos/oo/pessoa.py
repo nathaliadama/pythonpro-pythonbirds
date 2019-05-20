@@ -1,5 +1,7 @@
 class Pessoa:
 
+    olhos = 2  # Atributo Default ou Atributo de Classe.
+
     # Atributos de dados (data attributes)
     def __init__(self, nome=None, idade=35, *filhos):
         self.idade = idade
@@ -55,6 +57,51 @@ if __name__ == '__main__':
     # Removendo atributos de forma dinâmica
     del p2.filhos
 
+    print("Objeto após a deleção de um atributo:")
+
     # Verificando os objetos após a deleção.
     print(p2.__dict__)  # Aqui NÃO temos o atributo criado dinamicamente.
     print(p3.__dict__)  # Aqui TEMOS o atributo criado dinamicamente.
+
+    # Acessando atributos de classe.
+    print(f'Número de olhos em Pessoa: {Pessoa.olhos}')
+    print(f'Número de olhos em P1: {p1.olhos}')
+    print(f'Número de olhos em P2: {p2.olhos}')
+    print(f'Número de olhos em P3: {p3.olhos}')
+
+    # Exemplo de como estão os dicionários dos objetos.
+    print(p3.__dict__)  # Nesse momento o atributo ainda não faz parte do dict.
+
+    # Alterando um atributo de classe de um objeto
+    p3.olhos = 3
+
+    # Mostrando o resultado da alteração.
+    print("\nResultado após a alteração")
+    print(f'Número de olhos em Pessoa: {Pessoa.olhos}')
+    print(f'Número de olhos em P3: {p3.olhos}')
+
+    # Verificando os dicionários após a alteração.
+    print(p3.__dict__)
+
+    # Vamos verificar como os objetos foram alterados.
+    print(f'ID Objeto Pessoa: {id(Pessoa.olhos)}')
+    print(f'ID Objeto p1: {id(p1.olhos)}')  # Compartilha o atributo
+    print(f'ID Objeto p2: {id(p2.olhos)}')  # Compartilha o atributo
+    print(f'ID Objeto p3: {id(p3.olhos)}')  # Criado novo espaço na memória.
+
+    # Fazendo a alteração no atributo default na própria classe.
+    Pessoa.olhos = 4
+    print(f'ID Objeto Pessoa: {Pessoa.olhos}')
+    print(f'ID Objeto p1: {p1.olhos}')  # Compartilha o atributo
+    print(f'ID Objeto p2: {p2.olhos}')  # Compartilha o atributo
+    print(f'ID Objeto p3: {p3.olhos}')  # Criado novo espaço na memória.
+
+    # Apagando o valor alterado em p3 e verificando o resultado.
+    del p3.olhos
+    print(f'ID Objeto Pessoa: {Pessoa.olhos}')
+    print(f'ID Objeto p1: {p1.olhos}')  # Compartilha o atributo
+    print(f'ID Objeto p2: {p2.olhos}')  # Compartilha o atributo
+    print(f'ID Objeto p3: {p3.olhos}')  # Criado novo espaço na memória.
+
+    # Verificando o dict de p3
+    print(p3.__dict__)
