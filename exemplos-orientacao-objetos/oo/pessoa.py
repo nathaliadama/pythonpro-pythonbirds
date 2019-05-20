@@ -47,3 +47,14 @@ if __name__ == '__main__':
 
     # A linha abaixo se executada apresenta erro.
     # print(p2.sobrenome)
+
+    # Verificando os objetos criados.
+    print(p2.__dict__)  # Aqui NÃO temos o atributo criado dinamicamente.
+    print(p3.__dict__)  # Aqui TEMOS o atributo criado dinamicamente.
+
+    # Removendo atributos de forma dinâmica
+    del p2.filhos
+
+    # Verificando os objetos após a deleção.
+    print(p2.__dict__)  # Aqui NÃO temos o atributo criado dinamicamente.
+    print(p3.__dict__)  # Aqui TEMOS o atributo criado dinamicamente.
