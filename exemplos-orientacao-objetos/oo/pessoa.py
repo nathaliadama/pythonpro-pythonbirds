@@ -21,6 +21,10 @@ class Pessoa:
         return f'{cls} - olhos - {cls.olhos}'
 
 
+class Homem(Pessoa):
+    pass
+
+
 # Testes
 if __name__ == '__main__':
     p = Pessoa()
@@ -122,3 +126,13 @@ if __name__ == '__main__':
     # Acessando os métodos de classe
     print(Pessoa.nomes_atributos_classe())  # Acessando pela classe.
     print(p1.nomes_atributos_classe())  # Acessando pelo objeto.
+
+    # Testando a classe herdada de Pessoa
+    homem = Homem("Ronald", 39)
+    print(homem.nome)
+    print(homem.idade)
+
+    # Verificando a instância da classe
+    print(isinstance(p1, Pessoa))
+    print(isinstance(homem, Pessoa))
+    print(isinstance(homem, Homem))
