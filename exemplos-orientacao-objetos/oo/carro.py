@@ -41,25 +41,25 @@ Exemplo:
     >>> direcao.girar_a_direita()
     >>> direcao.valor
     'Leste'
-    >>> direcao.gerar_a_direita()
+    >>> direcao.girar_a_direita()
     >>> direcao.valor
     'Sul'
-    >>> direcao.gerar_a_direita()
+    >>> direcao.girar_a_direita()
     >>> direcao.valor
     'Oeste'
-    >>> direcao.gerar_a_direita()
+    >>> direcao.girar_a_direita()
     >>> direcao.valor
     'Norte'
-    >>> direcao.gerar_a_esquerda()
+    >>> direcao.girar_a_esquerda()
     >>> direcao.valor
     'Oeste'
-    >>> direcao.gerar_a_esquerda()
+    >>> direcao.girar_a_esquerda()
     >>> direcao.valor
     'Sul'
-    >>> direcao.gerar_a_esquerda()
+    >>> direcao.girar_a_esquerda()
     >>> direcao.valor
     'Leste'
-    >>> direcao.gerar_a_esquerda()
+    >>> direcao.girar_a_esquerda()
     >>> direcao.valor
     'Norte'
     >>> carro = Carro(direcao,motor)
@@ -107,18 +107,25 @@ class Motor:
 
 class Direcao:
 
+    rotacao_direita_dct = {
+        NORTE: LESTE,
+        LESTE: SUL,
+        SUL: OESTE,
+        OESTE: NORTE
+    }
+
+    rotacao_esquerda_dct = {
+        NORTE: OESTE,
+        OESTE: SUL,
+        SUL: LESTE,
+        LESTE: NORTE
+    }
+
     def __init__(self):
         self.valor = NORTE
 
     def girar_a_direita(self):
-        pass
+        self.valor = self.rotacao_direita_dct[self.valor]
 
     def girar_a_esquerda(self):
-        if self.valor == NORTE:
-            self.valor = LESTE
-        elif self.valor == LESTE:
-            self.valor = SUL
-        elif self.valor == SUL:
-            self.valor = OESTE
-        elif self.valor == OESTE:
-            self.valor = NORTE
+        self.valor = self.rotacao_esquerda_dct[self.valor]
