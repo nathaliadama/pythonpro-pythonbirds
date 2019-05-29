@@ -24,8 +24,9 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+
 class Mutante(Pessoa):
-    pass
+    olhos = 3
 
 
 # Testes
