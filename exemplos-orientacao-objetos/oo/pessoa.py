@@ -24,6 +24,9 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    pass
+
 
 # Testes
 if __name__ == '__main__':
@@ -136,3 +139,6 @@ if __name__ == '__main__':
     print(isinstance(p1, Pessoa))
     print(isinstance(homem, Pessoa))
     print(isinstance(homem, Homem))
+
+    xmen = Mutante()
+    print(xmen.olhos)  # xmen >> Mutante >> Pessoa >> Object
